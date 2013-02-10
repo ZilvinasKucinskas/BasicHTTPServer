@@ -16,6 +16,7 @@ class PostHandler(BaseHTTPRequestHandler):
         # Begin the response
         self.send_response(201)
         self.send_header("Content-type", "application/xml")
+        self.send_header("sdeaf-mrf-uniqueId", "0999116")
         self.end_headers()
         self.wfile.write('<data>%s</data>\n' % "lalala")
 

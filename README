@@ -1,1 +1,16 @@
 Basic HTTP Server implementation
+
+How to:
+
+To test this basic HTTP server I suggest to download:
+ALL -         http://code.google.com/p/rest-client/downloads/list
+GUI version - http://code.google.com/p/rest-client/downloads/detail?name=restclient-ui-3.1-jar-with-dependencies.jar&can=2&q=
+
+To run it simply write in console:
+java -jar restclient-ui-3.1-jar-with-dependencies.jar
+
+Default server location:
+http://localhost:8080
+
+To run python server simply write in terminal:
+python Main.py
