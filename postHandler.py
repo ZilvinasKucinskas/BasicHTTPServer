@@ -1,7 +1,11 @@
 __author__ = 'Zilvinas Kucinskas'
 
 from BaseHTTPServer import BaseHTTPRequestHandler
+from propertiesParser import Properties
 import  cgi
+
+HOST = 'host'
+PORT = 'port'
 
 class PostHandler(BaseHTTPRequestHandler):
 
@@ -21,7 +25,13 @@ class PostHandler(BaseHTTPRequestHandler):
         self.wfile.write('<data>%s</data>\n' % "lalala")
 
 if __name__ == '__main__':
+    p = Properties()
+    p.load(open('configuration.properties'))
+
+    host = p[HOST]
+    port = int(p[PORT])
+
     from BaseHTTPServer import HTTPServer
-    server = HTTPServer(('localhost', 8080), PostHandler)
+    server = HTTPServer((host, port), PostHandler)
     print 'Starting server, use <Ctrl-C> to stop'
     server.serve_forever()
